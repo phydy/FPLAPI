@@ -69,6 +69,12 @@ def get_forwards():
             forwards[forwardId] = i["event_points"]
     return forwards  
 
+def event(request):
+    return JsonResponse(
+        {
+            "GW": get_current_event()
+        }
+    )
 
 def goal(request):
     return JsonResponse(get_golies(), safe=False)

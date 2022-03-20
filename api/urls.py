@@ -5,5 +5,7 @@ urlpatterns = [
     path('goal/', views.goal),
     path('defender/', views.defender),
     path('midfield/', views.midfield),
-    path('forward/', views.forward)
+    path('forward/', views.forward),
+    path('event/', views.forward)
+
 ]
