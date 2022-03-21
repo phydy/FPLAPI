@@ -73,12 +73,12 @@ def get_players(request, player_id):
     players = requests.get("https://fantasy.premierleague.com/api/bootstrap-static/")
     jdata = json.loads(players.text)
     elements = jdata["elements"]
-    player_score = 0
+    player_score = {}
     for i in elements:
         if i["id"] == player_id:
-            player_score = i["event_points"]
+            player_score["POINTS"] = i["event_points"]
             
-    return JsonResponse(player_score, safe=False)  
+    return JsonResponse(player_score, safe=False)
 
 
 def event(request):
