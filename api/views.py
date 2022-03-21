@@ -69,6 +69,18 @@ def get_forwards():
             forwards[forwardId] = i["event_points"]
     return forwards  
 
+def get_players(request, player_id):
+    players = requests.get("https://fantasy.premierleague.com/api/bootstrap-static/")
+    jdata = json.loads(players.text)
+    elements = jdata["elements"]
+    player_score = 0
+    for i in elements:
+        if i["id"] == player_id:
+            player_score = i["event_points"]
+            
+    return JsonResponse(player_score, safe=False)  
+
+
 def event(request):
     return JsonResponse(
         {

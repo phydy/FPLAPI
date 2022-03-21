@@ -6,6 +6,6 @@ urlpatterns = [
     path('defender/', views.defender),
     path('midfield/', views.midfield),
     path('forward/', views.forward),
-    path('event/', views.forward)
-
+    path('event/', views.event),
+    path('<int:player_id>/', views.get_players, name="individual")
 ]
