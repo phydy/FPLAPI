@@ -1,1 +1,1 @@
-web: gunircorn FPLAPI.wsgi
+web: gunicorn FPLAPI.wsgi
